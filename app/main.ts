@@ -9,17 +9,19 @@ const acceptedCommands = ["echo", "type", "exit"];
 
 const promt = () => {
   rl.question("$ ", (answer) => {
-    if (answer === "exit 0") {
+    const firstCommand = answer.split(" ")[0];
+
+    if (firstCommand.includes("exit")) {
       rl.close();
       return;
     }
-    if (answer.includes("echo")) {
+    if (firstCommand.includes("echo")) {
       const echo = answer.split("echo ")[1];
       console.log(echo);
       promt();
       return;
     }
-    if (answer.includes("type")) {
+    if (firstCommand.includes("type")) {
       const type = answer.split("type ")[1];
 
       if (acceptedCommands.includes(type)) {
