@@ -9,7 +9,6 @@ const promt = () => {
   rl.question("$ ", (answer) => {
     console.log(`${answer}: command not found`);
     promt();
-    process.exit(0);
   });
 };
 promt();
