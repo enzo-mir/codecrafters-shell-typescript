@@ -11,6 +11,12 @@ const promt = () => {
       rl.close();
       return;
     }
+    if(answer.includes("echo")) {
+      const echo = answer.split("echo ")[1];
+      console.log(echo);
+      promt();
+      return;
+    }
     console.log(`${answer}: command not found`);
     promt();
   });
