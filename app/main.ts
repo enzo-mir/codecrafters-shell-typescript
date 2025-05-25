@@ -5,7 +5,7 @@ const rl = createInterface({
   output: process.stdout,
 });
 
-const acceptedCommands = ["echo", "type", "exit"];
+const acceptedCommands = ["echo", "type", "exit", "PATH"];
 
 const promt = () => {
   rl.question("$ ", (answer) => {
